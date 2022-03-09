@@ -1,0 +1,160 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="calculat your BMI">
+    <meta name="description" content="calculat your bmi">
+    <meta name="description" content="check if you are healthy">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="malasidha mendgudle">
+
+
+
+
+
+
+    <script>
+        function calculat() {
+            var feet = document.getElementById("hight").value
+            var weight = document.getElementById("weight").value
+
+            var meters = feet * 0.3048;
+            var hight = meters * meters;
+            var BMI = weight / hight;
+
+
+            if (BMI > 0) {
+                document.getElementById("output1").innerHTML = "<p align=center>  BMI is : " + BMI + "</p>";
+            }
+
+
+            if (BMI < 5) {
+                document.getElementById("output2").innerHTML = "<p align=center> Are you sure you're not dead?</p>";
+
+
+            } else if (BMI > 5 && BMI < 18.5) {
+                document.getElementById("output2").innerHTML = "<p align=center>you are underweight</p>";
+            } else if (BMI > 18.5 && BMI < 24.9) {
+                document.getElementById("output2").innerHTML = "<p align=center>you are  healthy </p>";
+            } else if (BMI > 25 && BMI < 29.9) {
+                document.getElementById("output2").innerHTML = "<p align=center>you are overweight </p>";
+            } else if (BMI > 29) {
+                document.getElementById("output2").innerHTML = "<p align=center>you are obese </p>";
+            }
+
+        }
+    </script>
+
+    <style>
+        body {
+            background-image: url("img/5547216.jpg");
+            background-size: 100%;
+        }
+        
+        #bgDiv {
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 110%;
+            width: 100%;
+            margin-top: -1ch;
+        }
+        
+        form {
+            height: 10cm;
+            width: 12cm;
+            margin-left: 13cm;
+            color: rgb(0, 0, 0);
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 0.5cm;
+        }
+        
+        input {
+            margin-top: 5ch;
+            width: 6cm;
+            height: 4ch;
+            border-radius: 1ch;
+            border-color: rgb(0, 0, 0);
+            background-color: rgba(255, 255, 255, 0.747);
+            color: rgb(0, 0, 0);
+            font-size: medium;
+        }
+        
+        label {
+            font-size: large;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-left: 1cm;
+        }
+        
+        #submitBut {
+            margin-left: 1cm;
+            background-color: rgb(0, 255, 0);
+            height: 1.5cm;
+            width: 8cm;
+            border-color: aqua;
+            margin-left: 9ch;
+        }
+        
+        #output1 {
+            width: 8cm;
+            height: 5ch;
+            background-color: rgb(21, 255, 0);
+            border-radius: 2ch;
+            margin-left: 15cm;
+            color: black;
+            padding: 0.8ch;
+        }
+        
+        #output2 {
+            width: 8cm;
+            height: 5ch;
+            background-color: rgb(21, 255, 0);
+            border-radius: 2ch;
+            margin-left: 15cm;
+            margin-top: 5ch;
+            font-size: larger;
+            padding: 0.5ch;
+        }
+        
+        h3 {
+            color: aliceblue;
+            margin-left: 17cm;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bgdiv">
+
+        <br><br><br><br><br>
+
+        <form action="" id="aaa">
+            <label for="hight"> enter your height  :</label>
+            <input type="number" id="hight" placeholder="feet . inches"><br><br>
+
+
+
+            <label for="weight">enter your weight :</label>
+            <input type="number" id="weight" placeholder="weight"><br><br>
+
+
+            <input type="button" value="calculat your BMI" id="submitBut" onclick="calculat()">
+
+        </form>
+
+
+        <h3>your BMI is :</h3>
+        <div id="output1">
+        </div>
+
+
+        <div id="output2">
+        </div>
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>
